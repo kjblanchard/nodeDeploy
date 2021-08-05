@@ -12,5 +12,5 @@ module "webserver_cluster" {
   cpu_scale_threshold = 50
   deploymentName = "quotegen"
   websiteDnsName = "kubernetes"
-  enable_r53 = false
+  enable_r53 = true
 }

@@ -1,9 +1,11 @@
 #Grab the local state from the parent module so that we can reference the k8s cluster
 #This should end up moving to a remote backend and would reference that in a real example.
 data "terraform_remote_state" "eks" {  
-  backend = "local"
+  backend = "s3"
   config = {    
-    path = "../terraform.tfstate"  
+    bucket = "eks-supergoon-kjb"
+    key = "global/s3/terraform.tfstate"
+    region = "us-east-2"
   }
 }
 provider "aws" {
