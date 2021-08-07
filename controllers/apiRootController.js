@@ -4,8 +4,8 @@ var router = express.Router();
 
 router.get('/', function (req, res, next) {
 
-    deployment.DeployQuoteGen('','','','')
-    res.send('This is the root, look in the correct spot probably');
+    res.send('Request received, starting deployment');
+    deployment.DeployQuoteGen('theImageName','deploymentName','no','theSiteName')
 });
 
 module.exports = router;
